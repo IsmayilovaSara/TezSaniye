@@ -1,7 +1,7 @@
 from firestore_client import initialize_firestore
 from rss_fetcher import fetch_rss
 from duplicate_checker import article_exists
-from article_scraper import scrape_full_article
+from scrapers.engadget_scraper import scrape_full_article
 from config import SOURCES
 from datetime import datetime, timezone
 import time
@@ -27,7 +27,7 @@ def process_source(db, source):
     entries = fetch_rss(source["rss_url"])
     print(f"Found {len(entries)} articles")
 
-    for entry in entries[:5]:  # keep limit during testing
+    for entry in entries[:50]:  # keep limit during testing
         url = entry.link
         title = entry.title
         summary = entry.summary if hasattr(entry, "summary") else None
