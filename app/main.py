@@ -6,6 +6,7 @@ from firestore_client import initialize_firestore
 from rss_fetcher import fetch_rss
 from duplicate_checker import article_exists
 from config import SOURCES
+from bs4 import BeautifulSoup
 
 from scrapers.engadget_scraper import scrape_full_article as scrape_engadget
 from scrapers.techcrunch_scraper import scrape_full_article as scrape_techcrunch
@@ -19,6 +20,11 @@ from scrapers.infoq_scraper import scrape_full_article as scrape_infoq
 from scrapers.venturebeat_scraper import scrape_full_article as scrape_venturebeat
 from scrapers.zdnet_scraper import scrape_full_article as scrape_zdnet
 from scrapers.thenextweb_scraper import scrape_full_article as scrape_tnw
+from scrapers.gamedeveloper_scraper import scrape_full_article as scrape_gamedeveloper
+from scrapers.itpro_scraper import scrape_full_article as scrape_itpro
+from scrapers.quanta_scraper import scrape_full_article as scrape_quanta
+from scrapers.tomshardware_scraper import scrape_full_article as scrape_tomshardware
+from scrapers.blocksandfiles_scraper import scrape_full_article as scrape_blocks
 
 
 SCRAPER_MAP = {
@@ -34,6 +40,11 @@ SCRAPER_MAP = {
     "VentureBeat": scrape_venturebeat,
     "ZDNet": scrape_zdnet,
     "The Next Web": scrape_tnw,
+    "GameDeveloper": scrape_gamedeveloper, 
+    "IT Pro": scrape_itpro,
+    "Quanta": scrape_quanta,
+    "Tom's Hardware": scrape_tomshardware,
+    "Blocks and Files": scrape_blocks,
 }
 
 def count_articles(db):
@@ -76,7 +87,13 @@ def process_source(db, source):
         print(f"❌ No scraper configured for source: {source['name']}")
         return
 
-    for entry in entries[:100]:
+
+
+
+
+
+
+    for entry in entries[:50]:
         url = getattr(entry, "link", None)
         title = getattr(entry, "title", None)
         snippet = getattr(entry, "summary", None)

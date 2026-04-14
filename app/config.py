@@ -85,6 +85,44 @@ SOURCES = [
     "category": "research"
 },
 
+{
+    "name": "GameDeveloper",
+    "rss_url": "https://www.gamedeveloper.com/rss.xml",
+    "source_type": "rss",
+    "topic": "technology",
+    "category": "gaming"
+},
+{
+    "name": "IT Pro",
+    "rss_url": "https://www.itpro.com/feeds/all",
+    "source_type": "rss",
+    "topic": "technology",
+    "category": "enterprise"
+},
+{
+    "name": "Quanta",
+    "rss_url": "https://www.quantamagazine.org/feed",
+    "source_type": "rss",
+    "topic": "technology",
+    "category": "research"
+},
+
+{
+    "name": "Tom's Hardware",
+    "rss_url": "https://www.tomshardware.com/feeds/all",
+    "source_type": "rss",
+    "topic": "technology",
+    "category": "hardware"
+},
+
+{
+    "name": "Blocks and Files",
+    "rss_url": "https://blocksandfiles.com/feed/",
+    "source_type": "rss",
+    "topic": "technology",
+    "category": "storage"
+}
+
     
     
     
