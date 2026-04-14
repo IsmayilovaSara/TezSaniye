@@ -1,6 +1,7 @@
 import feedparser
 import requests
 
+
 def fetch_rss(url):
     headers = {
         "User-Agent": "Mozilla/5.0"
