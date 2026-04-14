@@ -93,7 +93,7 @@ def process_source(db, source):
 
 
 
-    for entry in entries[:50]:
+    for entry in entries[:10]:
         url = getattr(entry, "link", None)
         title = getattr(entry, "title", None)
         snippet = getattr(entry, "summary", None)
